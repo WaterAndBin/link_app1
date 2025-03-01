@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { getLogin } from '@/api/user.ts'
+import { onMounted } from 'vue'
+
+onMounted(async () => {
+  const a = await getLogin()
+  console.log(a)
+})
 </script>
 
 <template>
