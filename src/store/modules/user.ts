@@ -1,9 +1,14 @@
 import { defineStore } from 'pinia'
-import { store } from '../index.ts'
 import { type UserResult, getLogin } from '@/api/user'
 import { type DataInfo, setToken, removeToken, userKey } from '@/utils/auth'
 
 export const useUserStore = defineStore('user', {
+  persist: true,
+  state: () => {
+    return {
+      token: '12312313dadsasdadasdads',
+    }
+  },
   // state: (): userType => ({
   //   // 头像
   //   avatar: storageLocal().getItem<DataInfo<number>>(userKey)?.avatar ?? '',
@@ -50,7 +55,3 @@ export const useUserStore = defineStore('user', {
   // },
   // },
 })
-
-export function useUserStoreHook() {
-  return useUserStore(store)
-}

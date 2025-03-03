@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-import { useUserStoreHook } from '@/store/modules/user'
+import { useUserStore as useUserStoreHook } from '@/store/modules/user'
 import { useLocalStorage, type MaybeRefOrGetter } from '@vueuse/core'
 
 export interface DataInfo {
